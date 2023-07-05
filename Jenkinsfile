@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         PATH = "/usr/bin:$PATH"
-        tag = "2.0"
+        tag = "1.0"
         dockerHubUser="akshay451995"
         containerName="insure-me"
         httpPort="8081"
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage("code clone"){
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshay451995/ak.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshay451995/asi-insurance.git']])
             }
         }
         stage("Maven build"){
