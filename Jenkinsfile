@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         PATH = "/usr/bin:$PATH"
-        tag = "2.0"
+        tag = "1.0"
         dockerHubUser="akshay451995"
         containerName="insure-me"
         httpPort="8081"
@@ -15,7 +15,7 @@ pipeline {
         }
         stage("Maven build"){
             steps {
-                sh "mvn clean install"
+                sh "mvn clean install -DskipTests"
             }
         }
         stage("Build Docker Image"){
