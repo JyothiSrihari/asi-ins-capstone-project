@@ -3,14 +3,14 @@ pipeline {
     environment {
         PATH = "/usr/bin:$PATH"
         tag = "1.0"
-        dockerHubUser="akshay451995"
+        dockerHubUser="jyothirao"
         containerName="insure-me"
         httpPort="8081"
     }
     stages {
         stage("code clone"){
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshay451995/asi-insurance.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jyothisrihari/asi-insurance.git']])
             }
         }
         stage("Maven build"){
